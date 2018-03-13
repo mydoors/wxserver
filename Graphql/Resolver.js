@@ -1,18 +1,19 @@
 // The resolvers
-const books = [
-    {
-        title: "Harry Potter and the Sorcerer's stone",
-        author: 'J.K. Rowling',
-        reviewrank:3
-    },
-    {
-        title: 'Jurassic Park',
-        author: 'Michael Crichton',
-        reviewrank:5
-    },
-];
+const {createUser,listUser}=require("../Model/User")
+
 const resolvers = {
-    Query: { books: () => books },
+    Query: { users:async () => {
+        let userlist=await listUser()
+        return userlist
+    }
+    },
+    Mutation:{
+        createUser:async (root,args)=>{
+            console.log(args)
+            let auser=await createUser(args.name,args.age)
+            return auser
+        }
+    }
 };
 module.exports={
     resolvers

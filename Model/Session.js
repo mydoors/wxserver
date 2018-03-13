@@ -1,5 +1,5 @@
 const  {getUserInfo}= require('./User')
-var  {mongoose}=require('./MongooseDB')
+const  {mongoose}=require('./MongooseDB')
 const {AES}=require('../Utils/AES')
 const sessionstore = mongoose.model('SessionStore', {
     js_code: String,

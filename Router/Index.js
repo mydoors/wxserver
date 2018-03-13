@@ -13,18 +13,6 @@ router.get('/', async (ctx,next) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 router.post('/graphql', graphqlKoa.graphqlKoa({ schema: schema }));
 router.get('/graphql', graphqlKoa.graphqlKoa({ schema: schema }));
 
@@ -32,11 +20,6 @@ router.get('/graphql', graphqlKoa.graphqlKoa({ schema: schema }));
 router.get('/graphiql', graphqlKoa.graphiqlKoa({
     endpointURL: '/graphql' // a POST endpoint that GraphiQL will make the actual requests to
 }));
-
-
-
-
-
 
 
 

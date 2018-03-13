@@ -3,9 +3,12 @@ const {resolvers}=require('./Resolver')
 
 
 const typeDefs = `
-  type Query { books: [Book] }
-  type Book { title: String, author: String,reviewrank:Int }
-`;
+  type Query { users: [User] }
+  type Mutation{
+    createUser(name:String,age:Int):User
+  }
+  type User { name: String, age:Int}
+`
 
 
 
